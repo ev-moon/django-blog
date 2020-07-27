@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+    <br>
+    <div class="container">
+        <img src="{% static 'coding_cat.jpeg' %}" height=400 alt="">
+        <br>
+        {% for portfolio in portfolios.all %}
+        <br>
+        <div class="container">
+            <img src="{{portfolio.image.url}}">
+            <p>{{portfolio.description}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
